@@ -1,8 +1,7 @@
-
-import { useNavigate, Link } from "react-router-dom";
+ import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 
-function WorkerDashboard() {
+function CustomerDashboard() {
 
     const navigate = useNavigate();
 
@@ -37,14 +36,14 @@ function WorkerDashboard() {
                 return;
             }
 
-            if (data.user.role !== "worker") {
-                alert("This account is not a worker account.");
+            if (data.user.role !== "customer") {
+                alert("This account is not a customer account.");
                 return;
             }
 
-            alert("Worker login successful!");
+            alert("Login successful!");
 
-            navigate("/worker-home");
+            navigate("/customer-home");
 
         } catch (error) {
 
@@ -56,16 +55,15 @@ function WorkerDashboard() {
 
 
     return (
-        <div className="worker-login-page">
+        <div className="customer-login-page">
 
-            <div className="worker-login-card">
+            <div className="customer-login-card">
 
-                <h1>Worker Login</h1>
+                <h1>Customer Login</h1>
 
                 <p>
-                    Login to manage your services and bookings.
+                    Login to book services from verified workers.
                 </p>
-
 
                 <form onSubmit={handleSubmit}>
 
@@ -119,4 +117,4 @@ function WorkerDashboard() {
     );
 }
 
-export default WorkerDashboard;
+export default CustomerDashboard;

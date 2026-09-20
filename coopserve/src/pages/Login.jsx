@@ -1,38 +1,30 @@
 import { Link } from 'react-router-dom'
+
 function Login() {
   return (
     <div className="login-page">
 
       <h1>Welcome to CoopServe</h1>
 
-      <p>Login to continue</p>
+      <p>Choose your account type to continue</p>
 
       <div className="login-form">
 
-        <label>Mobile Number</label>
-        <input
-          type="text"
-          placeholder="Enter mobile number"
-        />
-
-        <label>Password</label>
-        <input
-          type="password"
-          placeholder="Enter password"
-        />
-       <h3>Login as</h3>
-
-        <div>
+        <h2>Login As</h2>
+     <div className="login-buttons"> 
+        <Link to="/customer">
           <button>Customer</button>
+        </Link>
 
-        <Link to="/worker-dashboard">
+        <Link to="/worker">
           <button>Worker</button>
         </Link>
-</div>
-        
-
+      </div>
         <p>
-          Don't have an account? <span>Register</span>
+          Don't have an account?{' '}
+          <Link to="/register">
+            Register
+          </Link>
         </p>
 
       </div>
